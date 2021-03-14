@@ -1,5 +1,12 @@
+<script context="module">
+  export async function preload( { params }) {
+    return { lang: params.lang }
+  }
+</script>
+
 <script>
   import { _ } from 'svelte-i18n';
+  export let lang
 </script>
 
 <style>
@@ -57,3 +64,5 @@
     })}
   </strong>
 </p>
+
+<p>lang is {lang}</p>

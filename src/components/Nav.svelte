@@ -16,7 +16,7 @@
   
   const { page } = stores();
 
-  let localePath = $locale === "en" ? "" : $locale
+  let localePath = $locale === "en" ? "" : $locale + '/'
 
   const setLocale = (item) => {
     let [, lang, ...rest] = $page.path.split('/')

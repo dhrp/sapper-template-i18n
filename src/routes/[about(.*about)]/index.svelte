@@ -6,13 +6,15 @@
   register('es-ES', () => import('./messages/es-ES.json'));
   register('ar', () => import('./messages/ar.json'));
 
-  export function preload() {
-    return waitLocale();
+  export async function preload( { path }) {
+    await waitLocale();
+    return { slug: path.slug}
   }
 </script>
 
 <script>
   import { _ } from 'svelte-i18n';
+  export let slug
 </script>
 
 <style>
@@ -28,4 +30,5 @@
 <div class={$_('direction')}>
   <h1>{$_('about_this_site')}</h1>
   <p>{$_('about_content.0')}</p>
+  <p>path: {slug}</p>
 </div>

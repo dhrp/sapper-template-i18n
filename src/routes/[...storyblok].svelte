@@ -1,14 +1,17 @@
 <script context="module">
      export async function preload({ params, query }) {
     
-          return { slug: params.slug }
+          return { path: params.storyblok }
   }
 </script>
 <script>
-    export let slug
+    export let path
 </script>
 
 
 SLUG HERE
 
-{ slug }
+{ path }
+
+
+[s(^es|ar)]
