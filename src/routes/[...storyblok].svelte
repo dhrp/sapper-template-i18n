@@ -8,6 +8,9 @@
     export let slug
 </script>
 
+This file is a placeholder for the storyblok service file, which needs to get 
+any otherwise non-existing file.
+
 
 SLUG HERE
 

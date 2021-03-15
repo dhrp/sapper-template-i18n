@@ -1,11 +1,14 @@
 <script context="module">
   import { isLoading, waitLocale } from 'svelte-i18n';
 
-  export async function preload({ params, query }) {
-    console.log("params", params)
-    waitLocale();
-    return { page: params }
-  }
+  // export async function preload( page, session ) {
+  //   return { session }
+  // }
+  // export async function preload({ params, query }) {
+  //   console.log("params", params)
+  //   // waitLocale();
+  //   return { page: params }
+  // }
 </script>
 
 
@@ -14,9 +17,9 @@
   import { _, locale, locales } from 'svelte-i18n';
   export let segment;
   
-  const { page } = stores();
+  const { page, preloading, session } = stores();
 
-  let localePath = $locale === "en" ? "" : $locale
+  let localePath = $locale === "en" ? "" : $locale + "/"
 
   const setLocale = (item) => {
     let [, lang, ...rest] = $page.path.split('/')
@@ -30,6 +33,7 @@
 
     $locale = item
     localePath = $locale === "en" ? "" : $locale + '/'
+    session.locale = $locale
     goto(localePath + pagePart)
   }
 

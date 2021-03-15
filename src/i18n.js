@@ -30,7 +30,7 @@ $locale.subscribe((value) => {
 
 	// if running in the client, save the language preference in a cookie
 	if (typeof window !== 'undefined') {
-		setCookie('locale', value);
+		setCookie('locale', value, { path: '/' });
 	}
 });
 
@@ -40,7 +40,7 @@ export function startClient() {
 		...INIT_OPTIONS,
 		initialLocale:
 			getCookie('locale') ||
-			// getLocaleFromPathname() ||
+			getLocaleFromPathname(/^\/(.*?)\//) ||
 			getLocaleFromNavigator(),
 	});
 }
@@ -61,7 +61,6 @@ export function i18nMiddleware() {
 		}
 
 		let locale = getCookie('locale', req.headers.cookie);
-		// let locale = getLocaleFromPathname();
 
 		// no cookie, let's get the first accepted language
 		if (locale == null) {
@@ -78,6 +77,8 @@ export function i18nMiddleware() {
 		if (locale != null && locale !== currentLocale) {
 			$locale.set(locale);
 		}
+
+		req.locale = locale;
 
 		next();
 	};

@@ -6,9 +6,9 @@
   register('es-ES', () => import('./messages/es-ES.json'));
   register('ar', () => import('./messages/ar.json'));
 
-  export function preload() {
-    return waitLocale();
-  }
+  // export function preload() {
+  //   return waitLocale();
+  // }
 </script>
 
 <script>
