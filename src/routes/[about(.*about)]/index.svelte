@@ -6,13 +6,16 @@
   register('es-ES', () => import('./messages/es-ES.json'));
   register('ar', () => import('./messages/ar.json'));
 
-  export function preload() {
-    return waitLocale();
-  }
+  // export function preload() {
+  //   return waitLocale();
+
+  //   // console.log(locale)
+
+  // }
 </script>
 
 <script>
-  import { _ } from 'svelte-i18n';
+  import { _, locale, locales } from 'svelte-i18n';
 </script>
 
 <style>
@@ -28,4 +31,6 @@
 <div class={$_('direction')}>
   <h1>{$_('about_this_site')}</h1>
   <p>{$_('about_content.0')}</p>
+
+  <p>{$locale}</p>
 </div>

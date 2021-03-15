@@ -1,34 +1,32 @@
 {
-  "about_content": [
-    "Esta es la página acerca de"
-  ],
-  "about_this_site": "Acerca de este sitio",
-  "current_lang": "es/",
-  "direction": "ltr",
-  "languages": {
-    "ar": "عربى",
-    "en": "English",
-    "es_ES": "Espanol",
-    "pt_BR": "Português"
-  },
-  "messages": {
-    "error": "Error: {status}",
-    "high_five": "Cinco altos",
-    "success": "Gran éxito!",
-    "try_editing": " Intente editar este archivo (src/routes/index.svelte) para probar la recarga en vivo."
-  },
-  "nav": {
-    "about": "Acerca",
-    "blog": "Blog",
-    "home": "Inicio",
-    "product": "",
-    "routing": "Enrutamiento"
-  },
-  "product": "Producto",
-  "routing": {
-    "title": "Cómo funciona el enrutamiento internacionalizado"
-  },
-  "title": {
-    "index": " Plantilla de proyecto Sapper!"
-  }
+	"about_content": ["Esta es la página acerca de"],
+	"about_this_site": "Acerca de este sitio",
+	"current_lang": "es/",
+	"direction": "ltr",
+	"languages": {
+		"ar": "عربى",
+		"en": "English",
+		"es_ES": "Espanol",
+		"pt_BR": "Português"
+	},
+	"messages": {
+		"error": "Error: {status}",
+		"high_five": "Cinco altos",
+		"success": "Gran éxito!",
+		"try_editing": " Intente editar este archivo (src/routes/index.svelte) para probar la recarga en vivo."
+	},
+	"nav": {
+		"about": "Acerca",
+		"blog": "Blog",
+		"home": "Inicio",
+		"product": "",
+		"routing": "Enrutamiento"
+	},
+	"product": "Producto",
+	"routing": {
+		"title": "Cómo funciona el enrutamiento internacionalizado"
+	},
+	"title": {
+		"index": " Plantilla de proyecto Sapper!"
+	}
 }

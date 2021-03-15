@@ -1,5 +1,5 @@
 <script>
-  import { _ } from 'svelte-i18n';
+  import { _, locale } from 'svelte-i18n';
 </script>
 
 <style>
@@ -57,3 +57,4 @@
     })}
   </strong>
 </p>
+<p>{$locale}</p>

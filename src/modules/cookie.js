@@ -21,11 +21,20 @@ export function setCookie(name, value, options = {}) {
 		options.expires = options.expires.toUTCString();
 	}
 
+	console.log('cookie.options', options);
+
 	let updatedCookie = {
 		[encodeURIComponent(name)]: encodeURIComponent(value),
 		sameSite: 'strict',
 		...options,
 	};
+
+	console.log(
+		'cookie.string',
+		Object.entries(updatedCookie)
+			.map((kv) => kv.join('='))
+			.join(';')
+	);
 
 	document.cookie = Object.entries(updatedCookie)
 		.map((kv) => kv.join('='))

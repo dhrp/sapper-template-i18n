@@ -13,7 +13,11 @@ polka()
 		compression({ threshold: 0 }),
 		sirv('static', { dev }),
 		i18nMiddleware(),
-		sapper.middleware()
+		sapper.middleware({
+			session: (req, res) => ({
+				locale: req.locale, // value from i18Middleware
+			}),
+		})
 	)
 	.listen(PORT, (err) => {
 		if (err) console.log('error', err);

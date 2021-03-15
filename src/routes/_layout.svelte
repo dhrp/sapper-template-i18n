@@ -1,14 +1,27 @@
 <script context="module">
-  import { isLoading, waitLocale } from 'svelte-i18n';
+  import { init, isLoading, locale, waitLocale, getLocaleFromPathname } from 'svelte-i18n';
+  
+  export async function preload( page, session ) {
 
-  export async function preload({params}) {
-    return waitLocale();
+    let { host, path, params, query } = page;
+    
+    // Here we check if the session.locale (set by middleware) equals
+    // the actual path that we're on. If not, then we redirect.
+    //
+    // TODO: add the current path, otherwise it'll only redirect to /ar/ and not /ar/about. 
+    if (!path.includes(session.locale)) {
+      console.log("redirect!")
+			return this.redirect(302, session.locale + "/");
+		} else {
+      console.log("no redirect!")
+    }
+    
+    return 
   }
 </script>
 
 <script>
   import Nav from '../components/Nav.svelte';
-
   export let segment;
 </script>
 
