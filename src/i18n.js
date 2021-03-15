@@ -44,11 +44,11 @@ const createNewPath = () => {
 
 	if (isLanguage(pathArray[1])) {
 		pathArray[1] = currentLocale;
-		return `${host}${pathArray.join('/')}`;
+		return `http://${host}${pathArray.join('/')}`;
 	}
 
 	pathArray.splice(1, 0, currentLocale);
-	return `${host}${pathArray.join('/')}`;
+	return `http://${host}${pathArray.join('/')}`;
 }
 
 
@@ -59,8 +59,8 @@ const synchPath = () => {
 	}
 	const newPath = createNewPath();
 	goto(newPath);
-	console.log(newPath)
-	window.location.assign(newPath);
+	// console.log(newPath)
+	// window.location.assign(newPath);
 }
 
 $locale.subscribe((value) => {
